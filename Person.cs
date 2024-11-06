@@ -8,7 +8,7 @@
 
         public Person( string firstName, string lastName, int id)
         {
-            if (id < 0 || id > 9999999) { throw new ArgumentOutOfRangeException(nameof(id)); }
+            if (id < 1000000 || id > 9999999) { throw new ArgumentOutOfRangeException(nameof(id)); }
 
             FirstName = firstName;
             LastName = lastName;

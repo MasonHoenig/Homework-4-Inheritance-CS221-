@@ -14,10 +14,14 @@
         }
         public override string ToString()
         {
-            if (string.IsNullOrWhiteSpace(major)) { major = "Undeclared"; }
-            if(string.IsNullOrWhiteSpace(minor)) { minor = "Undeclared"; }
+            string Major;
+            string Minor;
+            if (string.IsNullOrWhiteSpace(major)) { Major = "Undeclared"; }
+            else { Major = major; }
+            if (string.IsNullOrWhiteSpace(minor)) { Minor = "Undeclared"; }
+            else { Minor = minor; }
 
-            return $"{lastName}, {firstName} ({id}) [{major} Major / {minor} Minor] GPA: {gpa}";
+            return $"{lastName}, {firstName} ({id}) [{Major} Major / {Minor} Minor] GPA: {gpa}";
         }
         public string? Major
         {

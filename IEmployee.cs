@@ -2,6 +2,6 @@
 {
 interface IEmployee
     {
-        void Salary(double salary);
+        double Salary {  get; set; }
     }
 }

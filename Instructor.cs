@@ -3,16 +3,29 @@
     class Instructor : Person, IEmployee
     {
         private string? department;
+        private double salary;
 
-        public Instructor(string firstName, string lastName, int id, string? department) : base(firstName, lastName, id)
+        public Instructor(string firstName, string lastName, int id, string? department, double salary) : base(firstName, lastName, id)
         {
             Department = department;
+            Salary = salary;
         }
         public override string ToString()
         {
-            return $"Prof. {lastName} ({id}) [Dept. of {department}] ($<salary>)";
+            return $"Prof. {lastName} ({id}) [Dept. of {department}] (${salary})";
         }
-        public void Salary(double salary) { }
+        public double Salary
+        {
+            get => salary;
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(salary));
+                }
+                salary = value;
+            }
+        }
         public string? Department
         {
             get => department;
